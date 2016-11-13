@@ -1,5 +1,13 @@
-extends layout
+{% extends 'layout.twig' %}
 
-block content
-  h1= title
-  p Welcome to #{title}
+{% block body %}
+  <div class="container text-center">
+
+    <div class="jumbotron">
+      <p class="lead">Hello, Welcome to my Login Logout app. Please login in <a href="/users/login">here</a></p>
+    </div>
+
+    <br />
+
+  </div>
+{% endblock %}

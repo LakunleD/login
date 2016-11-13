@@ -1,7 +1,53 @@
-doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href='/stylesheets/bootstrap.min.css' rel='stylesheet' type="text/css" />
+    <link href="stylesheets/style.css" rel="stylesheet" type="text/css">
+
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+          {% if not user %}
+            <li role="presentation"><a href="/users/login">Login</a></li>
+            <li role="presentation"><a href="/users/register">Register</a></li>
+          {% else %}
+            <li role="presentation" class="active"><a href="/admin">Dashboard</a></li>
+            <li role="presentation"><a href="/users/profile">Profile</a></li>
+            <li role="presentation"><a href="/logout">Logout</a></li>
+          {% endif %}
+
+          </ul>
+        </nav>
+        <h3 class="text-muted"><a class="navbar-brand" href="/">Login App Demo</a></h3>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+            {% block body %}{% endblock %}
+        </div>
+      </div>
+
+      <footer class="footer text-center">
+        <p>&copy; Olakunle Dosunmu.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <script type="text/javascript" src="javascript/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="javascript/bootstrap.min.js"></script>
+
+
+
+    {% block scripts %}
+
+    {% endblock scripts %}
+  </body>
+</html>
