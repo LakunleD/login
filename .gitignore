@@ -7,4 +7,5 @@ node_modules
 # Optional npm cache directory
 .npm
 
-
+*/.idea/workspace.xml
+**/.idea/tasks.xml
