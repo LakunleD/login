@@ -9,7 +9,6 @@ var session = require('express-session');
 var passport = require('passport');
 var localStrategy = require('passport-local');
 var flash = require('connect-flash');
-var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var db = mongoose.connection;
 

@@ -4,7 +4,16 @@
     <h2 class="page-header text-center">{{title}}</h2>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <form method="post" action="/login">
+            {% if success_msg != "" %}
+                <div class="alert alert-success">{{ success_msg }}</div>
+            {% endif %}
+            {% if error_msg != "" %}
+                <div class="alert alert-danger">{{ error_msg }}</div>
+            {% endif %}
+            {% if error != "" %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endif %}
+            <form method="post" action="/users/login">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" name="username" id="username" class="form-control" placeholder="Username">
